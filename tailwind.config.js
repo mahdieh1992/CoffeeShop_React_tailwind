@@ -36,6 +36,19 @@ module.exports = {
       },
       letterSpacing: {
         'tightest': '-0.065em'
+      },
+      backgroundImage: {
+        'Desktop': "url('../public/images/headerBgDesktop.webp')",
+        'Mobile': "url('../public/images/headerBgMobile.webp')"
+      },
+      container: {
+        'center': true,
+        padding: {
+          DEFAULT: '1rem',
+          md: '0.625rem'
+        }
+
+
       }
     },
   },
