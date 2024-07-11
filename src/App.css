@@ -39,6 +39,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         height: 905px;
+   
     }
   
 }
@@ -49,6 +50,13 @@
     }
     .unShowBar{
             @apply absolute w-64 right-0 transition-all duration-1000 md:hidden items-center bg-white dark:bg-gray-700 px-4 child:text-gray-700  dark:child:text-white
+    }
+
+    .CarShowBar{
+        @apply absolute w-64 -left-64 transition-all duration-1000  md:hidden items-center bg-white dark:bg-gray-700 px-4 child:text-gray-700  dark:child:text-white
+    }
+    .unCarShowBar{
+            @apply absolute w-64 left-0 transition-all duration-1000 md:hidden items-center bg-white dark:bg-gray-700 px-4 child:text-gray-700  dark:child:text-white
     }
 }
 

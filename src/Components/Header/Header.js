@@ -35,6 +35,9 @@ export default function Header() {
 
     const [IsBarMenu, setIsBarMenu] = useState(0)
 
+    const [IsCartBarMenu, setIsCartBarMenu] = useState(0)
+
+
     const handleMenu = () => {
         setIsSubmenu(!IsSubmenu)
 
@@ -43,6 +46,9 @@ export default function Header() {
 
     const handleBarMenu = () => {
         setIsBarMenu(!IsBarMenu)
+    }
+    const handleCartBarMenu = () => {
+        setIsCartBarMenu(!IsCartBarMenu)
     }
 
     return (
@@ -237,7 +243,7 @@ export default function Header() {
                         <svg className="w-6 h-6 ">
                             <use href="#bars3"></use>
                         </svg>
-                    
+
                     </div>
                     {/* Coffee Logo */}
                     <svg className="w-[100px] h-10 text-orange-300">
@@ -246,105 +252,187 @@ export default function Header() {
                         </use>
                     </svg>
                     {/* shopping cart*/}
-                    <svg className="w-6 h-6 ">
-                        <use href="#shopping-cart"></use>
-                    </svg>
+                    <div onClick={handleCartBarMenu}>
+                        <svg className="w-6 h-6 ">
+                            <use href="#shopping-cart"></use>
+                        </svg>
+                    </div>
 
 
                 </div>
-                    {/* Bar Menu */}
-                    <div className={`${IsBarMenu==1 ? 'unShowBar' : 'showBar'}`}>
-                            {/* Header Bar Menu */}
-                            <div className="flex items-center justify-between">
-                                {/* logo and coffee logo */}
-                                <div className="flex gap-x-3.5 text-orange-300">
-                                    <svg className="w-14 h-14">
-                                        <use href="#logo"></use>
+                {/* Bar Menu */}
+                <div className={`${IsBarMenu == 1 ? 'unShowBar' : 'showBar'}`}>
+                    {/* Header Bar Menu */}
+                    <div className="flex items-center justify-between">
+                        {/* logo and coffee logo */}
+                        <div className="flex gap-x-3.5 text-orange-300">
+                            <svg className="w-14 h-14">
+                                <use href="#logo"></use>
+                            </svg>
+
+                            <svg className="w-[100px] h-10 ">
+                                <use href="#logo-type"></use>
+                            </svg>
+                        </div>
+                        {/* close icon */}
+                        <svg onClick={handleBarMenu} className="w-5 h-5 text-gray-700 dark:text-white">
+                            <use href="#close"></use>
+                        </svg>
+
+                    </div>
+                    {/* Dived Menu */}
+                    <span className="block w-56 border bg-white/10 my-5">
+                    </span>
+                    {/* Body Bar Menu */}
+                    <div className="text-white text-base font-DanaRegular">
+                        {Menu.map(menu => (
+                            <div className={`${menu.id == 1 ? 'flex gap-2 my-6 child:text-orange-300  h-10 items-center pr-2.5 bg-orange-300/20 rounded-md' : 'my-6  child-hover:text-orange-300'}`}>
+
+                                <a onClick={handleMenu} href="#" className="flex gap-x-2 text-gray-700 dark:text-white" >
+
+                                    <svg className="w-5 h-5">
+                                        <use href={menu.logoId}></use>
                                     </svg>
+                                    {menu.title}
 
-                                    <svg className="w-[100px] h-10 ">
-                                        <use href="#logo-type"></use>
-                                    </svg>
-                                </div>
-                                {/* close icon */}
-                                <svg onClick={handleBarMenu} className="w-5 h-5 text-gray-700 dark:text-white">
-                                    <use href="#close"></use>
-                                </svg>
+                                    {menu.subMenu && (
 
-                            </div>
-                            {/* Dived Menu */}
-                            <span className="block w-56 border bg-white/10 my-5">
-                            </span>
-                            {/* Body Bar Menu */}
-                            <div className="text-white text-base font-DanaRegular">
-                                {Menu.map(menu => (
-                                    <div className={`${menu.id == 1 ? 'flex gap-2 my-6 child:text-orange-300  h-10 items-center pr-2.5 bg-orange-300/20 rounded-md' : 'my-6  child-hover:text-orange-300'}`}>
+                                        <svg className="w-5 h-5 rotate-90 mr-28">
+                                            <use href="#chevron-down"></use>
+                                        </svg>
 
-                                        <a onClick={handleMenu} href="#" className="flex gap-x-2 text-gray-700 dark:text-white" >
-
-                                            <svg className="w-5 h-5">
-                                                <use href={menu.logoId}></use>
-                                            </svg>
-                                            {menu.title}
-
-                                            {menu.subMenu && (
-
-                                                <svg className="w-5 h-5 rotate-90 mr-28">
-                                                    <use href="#chevron-down"></use>
-                                                </svg>
-
-                                            )}
+                                    )}
 
 
-                                        </a>
-                                        {IsSubmenu == 1 && menu.subMenu && menu.subMenu.map(submenu => (
-                                            <a href="#" className="text-gray-700 dark:text-white inline-block text-base tracking-normal pr-11 my-3" key={submenu.id}>{submenu.title}</a>
-                                        ))}
-
-
-
-                                    </div>
+                                </a>
+                                {IsSubmenu == 1 && menu.subMenu && menu.subMenu.map(submenu => (
+                                    <a href="#" className="text-gray-700 dark:text-white inline-block text-base tracking-normal pr-11 my-3" key={submenu.id}>{submenu.title}</a>
                                 ))}
 
 
-                            </div>
-                            {/* Dived Body */}
-                            <span className="block w-56 border  bg-white/10 my-5">
-                            </span>
-                            {/* Footer Bar Menu */}
-                            <div className="text-base space-y-6 text-gray-700 dark:text-white">
-                                <a className="flex gap-x-2.5">
-                                    <svg className="w-5 h-5">
-                                        <use href="#arrow-left">  </use>
-                                    </svg>
-                                    ورود و ثبت نام
-
-                                </a>
-                                <a className="flex gap-x-2.5">
-                                    <svg className="w-5 h-5">
-                                        <use href="#moon"> </use>
-                                    </svg>
-                                    تم تیره
-
-                                </a>
-                                <a className="flex gap-x-2.5 pb-24">
-                                    <svg className="w-5 h-5">
-                                        <use href="#shopping-cart">  </use>
-                                    </svg>
-                                    سبد خرید
-
-                                </a>
 
                             </div>
+                        ))}
+
+
+                    </div>
+                    {/* Dived Body */}
+                    <span className="block w-56 border  bg-white/10 my-5">
+                    </span>
+                    {/* Footer Bar Menu */}
+                    <div className="text-base space-y-6 text-gray-700 dark:text-white">
+                        <a className="flex gap-x-2.5">
+                            <svg className="w-5 h-5">
+                                <use href="#arrow-left">  </use>
+                            </svg>
+                            ورود و ثبت نام
+
+                        </a>
+                        <a className="flex gap-x-2.5">
+                            <svg className="w-5 h-5">
+                                <use href="#moon"> </use>
+                            </svg>
+                            تم تیره
+
+                        </a>
+                        <a className="flex gap-x-2.5 pb-24">
+                            <svg className="w-5 h-5">
+                                <use href="#shopping-cart">  </use>
+                            </svg>
+                            سبد خرید
+
+                        </a>
 
                     </div>
 
+                </div>
+
+                {/* Cart Bar */}
+                <div className={`${IsCartBarMenu == 1 ? 'unCarShowBar' : 'CarShowBar'}`}>
+                    {/* Header Cart Bar Menu */}
+                    <div className="flex items-center justify-between">
+
+                        {/* close icon */}
+                        <svg onClick={handleCartBarMenu} className="w-5 h-5 text-gray-700 dark:text-white">
+                            <use href="#close"></use>
+                        </svg>
+                        <span className="text-base">سبد خرید</span>
+
+                    </div>
+                    {/* Dived Menu */}
+                    <span className="block w-56 border bg-white/10 my-5">
+                    </span>
+                    {/* Body Cart Bar Menu */}
+                    <div className="max-h-40 overflow-y-scroll">
+                        <div className="flex mt-5 gap-x-2.5">
+                            {/* shopping cart body - img */}
+                            <div className="w-100 h-100">
+                                <img src="../images/products/p1.png"></img>
+                            </div>
+                            {/* shopping cart body-description */}
+                            <div className="flex flex-col justify-between">
+                                {/* shopping cart body-description-title */}
+                                <h2 className="text-gray-700 dark:text-white text-base max-w-[230px]">قهوه اسپرسو بن مانو مدل پریسکا 250 گرمی</h2>
+                                {/* shopping cart body-description-price */}
+                                <div>
+                                    <h5 className="text-xs text-teal-600 tracking-tighter dark:text-emerald-500">13600 تومان تخفیف</h5>
+                                    <div className="text-lg font-DanaBold text-gray-700 dark:text-white">
+                                        64000
+                                        <span className="text-sm"> تومان </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex mt-5 gap-x-2.5">
+                            {/* shopping cart body - img */}
+                            <div className="w-100 h-100">
+                                <img src="../images/products/p2.png"></img>
+                            </div>
+                            {/* shopping cart body-description */}
+                            <div className="flex flex-col justify-between">
+                                {/* shopping cart body-description-title */}
+                                <h2 className="text-gray-700 dark:text-white text-base max-w-[230px]">قهوه اسپرسو بن مانو مدل پریسکا 250 گرمی</h2>
+                                {/* shopping cart body-description-price */}
+                                <div>
+                                    <h5 className="text-xs text-teal-600 tracking-tighter dark:text-emerald-500">14500 تومان تخفیف</h5>
+                                    <div className="text-lg font-DanaBold text-gray-700 dark:text-white">
+                                        75000
+                                        <span className="text-sm"> تومان </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Dived Body */}
+                    <span className="block w-56 border  bg-white/10 my-5">
+                    </span>
+                    {/* Footer Cart Bar Menu */}
+
+                    <div className="flex justify-between gap-x-4">
+                        <a className="bg-teal-600 dark:bg-emerald-500 text-white rounded-xl w-36 h-14 flex items-center justify-center">
+                            ثبت سفارش
+                        </a>
+                        {/* shopping cart footer-sum price */}
+                        <div className="flex flex-col gap-y-1">
+                            <h4 className="text-gray-300 text-xs tracking-tighter">مبلغ قابل پرداخت</h4>
+                            <div className="text-gray-700 dark:text-white text-xl font-DanaBold">
+                                1450000
+                                <span className="text-sm"> تومان </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
 
             </div>
 
 
 
-            <Main />
+            <Main IsBarMenu={IsBarMenu} />
 
         </>
     )
