@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer base {
     @font-face {
         font-family: 'DanaBold';
         src: url('../public/Fonts/Dana/woff2/DanaFaNum-DemiBold.woff2');
@@ -34,30 +34,59 @@
     }
 
 
-    body{
-        background-image: url('../public/images/headerBgDesktop.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 905px;
-   
-    }
-  
+
 }
 
 @layer components {
-    .showBar{
-        @apply absolute w-64 -right-64 transition-all duration-1000  md:hidden items-center bg-white dark:bg-gray-700 px-4 child:text-gray-700  dark:child:text-white
-    }
-    .unShowBar{
-            @apply absolute w-64 right-0 transition-all duration-1000 md:hidden items-center bg-white dark:bg-gray-700 px-4 child:text-gray-700  dark:child:text-white
+    .showBar {
+        @apply absolute w-64 -right-64 transition-all duration-1000 md:hidden items-center bg-white dark:bg-gray-700 px-4 child:text-gray-700 dark:child:text-white
     }
 
-    .CarShowBar{
-        @apply absolute w-64 -left-64 transition-all duration-1000  md:hidden items-center bg-white dark:bg-gray-700 px-4 child:text-gray-700  dark:child:text-white
+    .unShowBar {
+        @apply absolute w-64 right-0 transition-all duration-1000 md:hidden items-center bg-white dark:bg-gray-700 px-4 child:text-gray-700 dark:child:text-white
     }
-    .unCarShowBar{
-            @apply absolute w-64 left-0 transition-all duration-1000 md:hidden items-center bg-white dark:bg-gray-700 px-4 child:text-gray-700  dark:child:text-white
+
+    .CarShowBar {
+        @apply absolute w-64 left-0 transition-all duration-1000 md:hidden items-center bg-white dark:bg-gray-700 px-4 child:text-gray-700 dark:child:text-white
+    }
+
+
+    .unCarShowBar {
+        @apply absolute w-64 -left-64 transition-all duration-1000 md:hidden items-center bg-white dark:bg-gray-700 px-4 child:text-gray-700 dark:child:text-white
+    }
+
+    .circle {
+        @apply bottom-0 left-0 right-0 mx-auto border rounded-full
+    }
+
+    .navigation {
+        @apply w-9 h-9 md:w-11 md:h-11 rounded-full bg-white dark:bg-gray-700 text-gray-700 dark:text-white flex justify-center items-center
     }
 }
 
+@layer utilities {
+    .product {
+        background-image: linear-gradient(rgba(243, 244, 246, 0.65), rgba(243, 244, 246, 0.65)), url('../public/images/body-bg.png');
 
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+
+    }
+
+    .products {
+        background-image: linear-gradient(rgba(17, 17, 17, 0.65), rgba(17, 17, 17, 0.65)), url('../public/images/body-bg.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+    }
+
+    .category {
+
+        border-radius: 16px;
+
+
+    }
+
+
+}

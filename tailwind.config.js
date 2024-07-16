@@ -26,7 +26,11 @@ module.exports = {
           '600': '#967259',
           '300': '#DBC1AC',
           '100': '#ECE0D1'
+        },
+        'gray':{
+          '100p':'#111111a6'
         }
+        
       },
       width: {
         '100': '120px'
@@ -39,7 +43,9 @@ module.exports = {
       },
       backgroundImage: {
         'Desktop': "url('../public/images/headerBgDesktop.webp')",
-        'Mobile': "url('../public/images/headerBgMobile.webp')"
+        'Mobile': "url('../public/images/headerBgMobile.webp')",
+     
+      
       },
       container: {
         'center': true,
@@ -49,7 +55,8 @@ module.exports = {
         }
 
 
-      }
+      },
+      
     },
   },
   plugins: [
