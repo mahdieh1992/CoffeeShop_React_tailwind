@@ -2,6 +2,8 @@ import { useState } from "react"
 import Categories from "./Categories"
 import ProductCategories from "./ProductCategories"
 import MoreSalesProduct from "./MoreSalesProduct"
+import Blog from "./Blog"
+import ContactUs from "./ContactUs"
 
 
 export default function Product() {
@@ -90,6 +92,8 @@ export default function Product() {
             <Categories />
             <ProductCategories />
             <MoreSalesProduct />
+            <Blog />
+            <ContactUs/>
 
         </>
     )
