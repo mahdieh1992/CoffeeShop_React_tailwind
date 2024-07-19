@@ -21,7 +21,7 @@ export default function ContactUs() {
                         </div>
                         <p className="font-DanaRegular  text-sm md:text-base max-w-[358px] md:max-w-[844px]">فضای گرم و دنج ما را احساس کنید، جایی که همه می توانند قهوه معطری پیدا کنند و دسرهای خوشمزه ما را که کاملاً با قهوه داغ همراه شده است، امتحان کنند. فضای داخلی شیک و کارکنان خوش برخورد ما روز شما را می سازد!</p>
                         <a className="flex w-[216px] h-[60px] text-orange-300 gap-x-2 border rounded-full border-orange-300 items-center justify-center">
-                            <svg className=" w-5 h-5 md:w-6 md:h-6">
+                            <svg className="w-5 h-5 md:w-6 md:h-6">
                                 <use href="#phone"></use>
                             </svg>
                             ثبت سفارش تلفنی</a>

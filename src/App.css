@@ -87,6 +87,41 @@
 
 
     }
+    
+    .Services{
+        position: relative;
+    }
+    .Services::after,
+    .Services::before {
+        content: "";
+        inset: 0;
+        position:absolute;
+        margin: auto;   
+        display: block;
+    
+    }
 
+    @media screen and (min-width:500px) {
+        .Services::before,
+        .Services::after{
+            content:none
+        }
+
+        
+    }
+
+    .Services::before{
+       width: 1px;
+       height: 100%;
+       background-color:#D1D5DB;
+
+    }
+
+    .Services::after{
+        width: 100%;
+        height: 1px;
+        background-color:#D1D5DB;
+ 
+     }
 
 }

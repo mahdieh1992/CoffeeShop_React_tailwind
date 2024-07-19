@@ -32,7 +32,7 @@ export default function Blog() {
                             <div className="flex md:flex-col gap-4 items-center justify-between shadow-normal md:pb-2 bg-white dark:bg-gray-700 rounded-2xl p-2.5">
                                 {/* images */}
                                 <div className="">
-                                    <img  className="rounded-2xl shrink-0 w-[130px]  md:w-[280px] md:h-[130px] object-cover" src={blog.img}></img>
+                                    <img className="rounded-2xl shrink-0 w-[130px]  md:w-[280px] md:h-[130px] object-cover" src={blog.img}></img>
                                 </div>
                                 {/*  description  & divided and date*/}
                                 <div className="flex flex-col md:flex-row justify-between">

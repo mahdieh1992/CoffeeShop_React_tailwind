@@ -4,6 +4,7 @@ import ProductCategories from "./ProductCategories"
 import MoreSalesProduct from "./MoreSalesProduct"
 import Blog from "./Blog"
 import ContactUs from "./ContactUs"
+import Services from "./Services"
 
 
 export default function Product() {
@@ -93,8 +94,8 @@ export default function Product() {
             <ProductCategories />
             <MoreSalesProduct />
             <Blog />
-            <ContactUs/>
-
+            <ContactUs />
+            <Services />
         </>
     )
 
