@@ -1,5 +1,6 @@
 import Header from "../Header/Header"
 import Product from "./Product"
+import Footer from "../Footer/Footer"
 
 
 export default function Main() {
@@ -64,6 +65,7 @@ export default function Main() {
                 </div>
             </section>
 
+            <Footer/>
         </>
 
 

@@ -118,7 +118,7 @@ export default function Services() {
             </svg>
             {/* this is for Services */}
             <section className="Services">
-                <div className="flex flex-wrap lg:flex-nowrap gap-y-11 justify-between items-center mt-[76px]">
+                <div className="flex flex-wrap lg:flex-nowrap gap-y-11 justify-between pb-[144px] items-center mt-[76px]">
                     {Services.map(service => (
                         <div className="flex gap-y-5 gap-x-2 flex-col md:flex-row justify-between items-center ">
                             {/* svg services */}
